@@ -26,4 +26,21 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)buttonPress:(UIButton *)sender {
+    UIButton *button = (UIButton *)sender;
+    
+    if (button.tag == 1) {
+        int xmin = ([button frame].size.width)/2;
+        int ymin = ([button frame].size.height)/2;
+        
+        int x = xmin + arc4random_uniform(self.view.frame.size.width - button.frame.size.width);
+        int y = ymin + arc4random_uniform((self.view.frame.size.height) / 2 - button.frame.size.height);
+        
+        
+        [button setCenter:CGPointMake(x, y)];
+    }
+    
+    
+}
+
 @end
